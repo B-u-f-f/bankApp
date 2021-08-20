@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, ListView
 
-from .models import CustomerAccount
+from .models import CustomerAccount, CustomerTransaction
 
+from datetime import datetime
 # Create your views here.
 
 class HomepageView(TemplateView):
@@ -47,10 +48,13 @@ class ProcessTransfer(TemplateView):
                 self.isValid = True
                 fromAccount.customer_balance -= self.a
                 toAccount.customer_balance += self.a
-
+                
+                CustomerTransaction.objects.create(customer_to_acc_number = toAccount.customer_acc_number, \
+                                                   customer_from_acc_number = fromAccount.customer_acc_number,\
+                                                   transaction_time = str(datetime.now())) 
             else:
                 self.isValid = False
-    
+
             fromAccount.save()
             toAccount.save()
         except:
