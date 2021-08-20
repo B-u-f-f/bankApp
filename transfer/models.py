@@ -18,6 +18,7 @@ class CustomerTransaction(models.Model):
     customer_to_acc_number = models.CharField(max_length = 20)
     customer_from_acc_number = models.CharField(max_length = 20)
     transaction_time = models.CharField(max_length = 100)
+    transaction_amount = models.IntegerField()
 
     def __str__(self):
         return str(self.id)

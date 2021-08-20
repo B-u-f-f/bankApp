@@ -51,7 +51,8 @@ class ProcessTransfer(TemplateView):
                 
                 CustomerTransaction.objects.create(customer_to_acc_number = toAccount.customer_acc_number, \
                                                    customer_from_acc_number = fromAccount.customer_acc_number,\
-                                                   transaction_time = str(datetime.now())) 
+                                                   transaction_time = str(datetime.now()),\
+                                                   transaction_amount = self.a) 
             else:
                 self.isValid = False
 
