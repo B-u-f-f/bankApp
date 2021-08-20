@@ -32,12 +32,12 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'transfer.apps.TransferConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'transfer.apps.TransferConfig',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
@@ -120,8 +120,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-print(BASE_DIR)
-print(os.path.join(BASE_DIR, 'staticfiles'))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
