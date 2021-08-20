@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transfer</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href={% static 'css/reset.css' %} type="text/css" media="screen">
+        <link rel="stylesheet" href={% static 'css/style.css' %} type="text/css" media="screen">
+        <link rel="stylesheet" href={% static 'css/grid.css' %}  type="text/css" media="screen">
+
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+    <body style="text-align: center;">
+        <div style="display: inline-block;min-width: 960px;">
+        <div class="wrapper border-bot" style="height: 8em;">
+            <h1><a href='{% url 'home_page' %}'>Elite <strong> Bank <strong></a></h1>
+            <nav>
+              <ul class="menu">
+                  <li><a href='{% url 'usercreate' %}'>Create User</a></li>
+                  <li><a href='{% url 'customerlist' %}'>View all customers</a></li>
+                  <li><a href='{% url 'transfermoney' %}'> Transfer money </a></li>
+              </ul>
+            </nav>
+        </div>
+ 
+      <form action="{% url 'processtransfer' %}" style="background-color: #4bc970;" method="GET">
+        {% csrf_token %} 
+        <h1 style="float: initial; font-size: xx-large;">Transfer Money</h1>
+        
+        <fieldset>
+
+            <label for="name" style="font-size:20">To Acc number:</label>
+          <input type = 'text'  name = 'toAcc' /> <br>
+          <label for="name"style="font-size:20">From Acc number: </label>
+
+        <input type = 'text' name = 'fromAcc' /> <br>
+
+          <label for="balance"style="font-size:20">Amount:</label>
+          <input type = 'number'  name = 'amount' /> <br>
+      </fieldset>
+        
+       <button type="submit" style="background-color:#d94141; color: white;">Transfer</button>
+      </form>
+      <div>
+    </body>
+</html>

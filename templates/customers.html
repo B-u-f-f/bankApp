@@ -1,0 +1,54 @@
+<!-- templates/customers.html -->
+
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href={% static 'css/reset.css' %} type="text/css" media="screen">
+        <link rel="stylesheet" href={% static 'css/style.css' %} type="text/css" media="screen">
+        <link rel="stylesheet" href={% static 'css/grid.css' %}  type="text/css" media="screen">
+        <title>
+            Customer list
+        </title>
+   </head>
+
+    <body style="text-align: center;">
+        <div style="display: inline-block;min-width: 960px;">
+        
+        <div class="wrapper border-bot" style="height: 8em;">
+            <h1><a href='{% url 'home_page' %}'>Elite <strong> Bank <strong></a></h1>
+
+            <nav>
+              <ul class="menu">
+                  <li><a href='{% url 'usercreate' %}'>Create User</a></li>
+                  <li><a href='{% url 'customerlist' %}'>View all customers</a></li>
+                  <li><a href='{% url 'transfermoney' %}'> Transfer money </a></li>
+              </ul>
+            </nav>
+        </div>
+        
+        <div style = "display: grid;">
+
+        <h1 style="text-align: center; font-size: 40; color: #4c4c4c; margin-bottom: 1em;"> Customers </h1>
+
+        <table> 
+            <tr>
+                <th style = "font-size: 20;"> Acc no. </th>
+                <th style = "font-size: 20;"> Name </th>
+                <th style = "font-size: 20;"> Email </th>
+                <th style = "font-size: 20;"> Balance </th>
+            </tr>
+            {% for c in customers %}
+            <tr>
+                <td style="border:1px solid black; padding: 1em; text-align: center;"> {{ c.customer_acc_number }} </td>
+                <td style="border:1px solid black; padding: 1em; text-align: center;"> {{ c.customer_name }} </td>
+                <td style="border:1px solid black; padding: 1em; text-align: center;"> {{ c.customer_email }} </td>
+                <td style="border:1px solid black; padding: 1em; text-align: center;"> {{ c.customer_balance }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+
+        </div>
+    </body>
+</html>

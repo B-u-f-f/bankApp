@@ -1,0 +1,34 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href={% static 'css/reset.css' %} type="text/css" media="screen">
+        <link rel="stylesheet" href={% static 'css/style.css' %} type="text/css" media="screen">
+        <link rel="stylesheet" href={% static 'css/grid.css' %}  type="text/css" media="screen">
+
+
+    </head>
+    <body style="text-align:center;">
+        <div style="display: inline-block;min-width: 960px;">
+        <div class="wrapper border-bot" style="height: 8em;">
+            <h1><a href='{% url 'home_page' %}'>Elite <strong> Bank </strong></a></h1>
+            <nav>
+              <ul class="menu">
+                  <li><a href='{% url 'usercreate' %}'>Create User</a></li>
+                  <li><a href='{% url 'customerlist' %}'>View all customers</a></li>
+                  <li><a href='{% url 'transfermoney' %}'> Transfer money </a></li>
+              </ul>
+            </nav>
+        </div>
+        
+        <div style="font-size:5em; margin-top:7em;">
+        {% if valid %}
+            <h2> Transaction successful </h2>
+        {% else %}
+            <h2> Transaction unsuccessful </h2>
+        {% endif %}
+        </div>
+        </div>
+
+    </body>
+</html>

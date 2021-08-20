@@ -1,0 +1,113 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href={% static 'css/reset.css' %} type="text/css" media="screen">
+<link rel="stylesheet" href={% static 'css/style.css' %} type="text/css" media="screen">
+<link rel="stylesheet" href={% static 'css/grid.css' %}  type="text/css" media="screen">
+</head>
+
+<body id="page1">
+<div class="main">
+  <!--==============================header=================================-->
+  <header>
+    <div class="container_12">
+      <div class="wrapper p3">
+        <div class="grid_12">
+
+         <div class="wrapper border-bot">
+            <h1><a href='{% url 'home_page' %}'>Elite <strong> Bank <strong></a></h1>
+            <nav>
+              <ul class="menu">
+                  <li><a href='{% url 'usercreate' %}'>Create User</a></li>
+                  <li><a href='{% url 'customerlist' %}'>View all customers</a></li>
+                  <li><a href='{% url 'transfermoney' %}'> Transfer money </a></li>
+              </ul>
+            </nav>
+            </div>
+          
+          <div class="wrapper">
+            <div id="banners" class="border-bot">
+              <div> <strong class="title-1">Experience Next</strong> <strong class="title-2"> Generation Banking</strong> </div>
+            </div>
+        </div>
+      </div>
+      <article class="grid_3">
+        <div class="box">
+            <figure><a href="#"><img style="max-height: 270px; max-width: 210px; min-height:200px" src= {% static 'images/car_loan.jpg' %} alt=""></a></figure>
+          <div class="padding"> <strong class="title-3 color-1">Auto Loans</strong> <a class="link" href="#">Get a low rate on purchase, refinance and lease buyout loans</a> </div>
+        </div>
+      </article>
+      <article class="grid_3">
+        <div class="box">
+          <figure><a href="#"><img style="max-height: 270px; max-width: 220px; min-height:230px" src={% static 'images/savings.jpg' %} alt=""></a></figure>
+          <div class="padding"> <strong class="title-3 color-2">Savings</strong> <a class="link" href="#">Savings made simple and rewarding</a> </div>
+        </div>
+      </article>
+      <article class="grid_3">
+        <div class="box">
+            <figure><a href="#"><img style="max-height: 270px; max-width: 220px; min-height: 200px;" src={% static 'images/investing.jpeg' %} alt=""></a></figure>
+          <div class="padding"> <strong class="title-3 color-3">Investing</strong> <a class="link" href="#">Reinventing what it means to be a confident investor</a> </div>
+        </div>
+      </article>
+      <article class="grid_3">
+          <div class="box">
+              <figure><a href="#"><img style="max-height: 270px; max-width: 210px;" src={% static 'images/credit_cards.jpg' %} alt=""></a></figure>
+          <div class="padding"> <strong class="title-3 color-4">Credit Cards</strong> <a class="link" href="#">Find the perfect credit card from among our most popular options</a> </div>
+        </div>
+      </article>
+      <div class="clear"></div>
+    </div>
+  </header>
+  <!--==============================content================================-->
+  <section id="content">
+    <div class="container_12">
+      <div class="wrapper">
+        <article class="grid_4">
+          <div class="indent-right">
+            <div class="maxheight img-indent-bot">
+              <h3>Monetary Policy Report</h3>
+              <p>Our quarterly Monetary Policy Report sets out the economic analysis and inflation projections that the Monetary Policy Committee uses to make its interest rate decisions.</p>
+               </div>
+            <a class="button" href="#">More</a> </div>
+        </article>
+        <article class="grid_4">
+          <div class="indent">
+            <div class="maxheight img-indent-bot">
+              <h3>Recent News</h3>
+              <time class="tdate-1" datetime="2012-02-06"><a class="link" href="#">Posted: 20.08.2021</a></time>
+              <p>We expect inflation to rise further in the coming months. As countries around the world have reopened, demand for some goods and services increased sharply.</p>
+              <time class="tdate-1" datetime="2012-02-04"><a class="link" href="#">Posted: 20.08.2021</a></time>
+              On average, the prices of the things people typically buy increased by 2.5% between June last year, when prices were low because of Covid, and June this year.  </div>
+            <a class="button" href="#">More</a> </div>
+        </article>
+        <article class="grid_4">
+          <div class="indent-left">
+            <div class="maxheight img-indent-bot">
+              <h3 class="p1">Our Services</h3>
+              <ul class="list-1">
+                <li><a href="#">Exchanging old banknotes</a></li>
+                <li><a href="#">Financial Education resources</a></li>
+                <li><a href="#">Market Assessment</a></li>
+                <li><a href="#">Interest rates and Bank rates</a></li>
+                <li><a href="#">Loans</a></li>
+                <li><a href="#">Open Accounts</a></li>
+                <li><a href="#">Investing</a></li>
+              </ul>
+            </div>
+            <a class="button" href="#">More</a> </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!--==============================footer=================================-->
+
+</div>
+</body>
+</html>
